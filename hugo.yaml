@@ -18,3 +18,7 @@ menu:
       weight: 110
       params:
         external: true
+
+params:
+  footer:
+    displayPoweredBy: false
