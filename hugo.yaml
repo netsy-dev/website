@@ -6,6 +6,11 @@ enableRobotsTXT: true
 module:
   imports:
     - path: github.com/imfing/hextra
+  mounts:
+    - source: content
+      target: content
+    - source: ../netsy/docs
+      target: content/docs
 
 params:
   description: Netsy is a replicated key-value database which stores data in object storage
