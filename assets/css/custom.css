@@ -2,3 +2,24 @@
   --primary-hue: 230deg;
   --primary-saturation: 97%;
 }
+
+.dark {
+  --primary-hue: 184deg;
+  --primary-saturation: 90%;
+}
+
+.dark a.not-prose[class*="bg-primary-600"] {
+  background-color: hsl(230deg 97% 50%) !important;
+}
+
+.dark a.not-prose[class*="bg-primary-600"]:hover {
+  background-color: hsl(230deg 97% 42%) !important;
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
