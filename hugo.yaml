@@ -1,3 +1,20 @@
 baseURL: https://netsy.dev/
 languageCode: en-us
 title: Netsy
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+menu:
+  main:
+    - name: GitHub
+      url: https://github.com/netsy-dev/netsy
+      weight: 100
+      params:
+        external: true
+    - name: Discord
+      url: https://go.nadrama.com/discord
+      weight: 110
+      params:
+        external: true
