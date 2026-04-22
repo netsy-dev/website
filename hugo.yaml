@@ -1,24 +1,58 @@
 baseURL: https://netsy.dev/
 languageCode: en-us
 title: Netsy
+enableRobotsTXT: true
 
 module:
   imports:
     - path: github.com/imfing/hextra
 
-menu:
-  main:
-    - name: GitHub
-      url: https://github.com/netsy-dev/netsy
-      weight: 100
-      params:
-        external: true
-    - name: Discord
-      url: https://go.nadrama.com/discord
-      weight: 110
-      params:
-        external: true
-
 params:
+  description: Netsy is a replicated key-value database which stores data in object storage
+  externalLinkDecoration: true
+  search:
+    enable: true
+    type: flexsearch
+  analytics:
+    umami:
+      serverURL: "https://cloud.umami.is"
+      websiteID: "c1e24923-7758-42ba-85d4-65eeaf7f6bd9"
+      scriptName: "script.js"
+  navbar:
+    displayLogo: true
+    logo:
+      path: netsy-icon.svg
+      width: 50
+      height: 50
+  customCSS:
+    - css/custom.css
   footer:
     displayPoweredBy: false
+
+menu:
+  main:
+    - name: Search
+      weight: 1
+      params:
+        type: search
+    - name: Discord
+      url: https://go.nadrama.com/discord
+      weight: 5
+      params:
+        icon: discord
+        external: true
+    - name: GitHub
+      url: https://github.com/netsy-dev/netsy
+      weight: 10
+      params:
+        icon: github
+        external: true
+  sidebar:
+    - name: GitHub
+      url: https://github.com/netsy-dev/netsy
+      weight: 1
+
+outputs:
+  home: [html, llms, markdown]
+  page: [html, markdown]
+  section: [html, markdown]
