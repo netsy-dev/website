@@ -44,9 +44,14 @@ jobs:
         with:
           submodules: recursive
       - name: Checkout netsy docs
+        uses: actions/checkout@v4
+        with:
+          repository: netsy-dev/netsy
+          path: netsy
+          sparse-checkout: docs
+      - name: Copy netsy docs
         run: |
-          git clone --depth 1 https://github.com/netsy-dev/netsy.git /tmp/netsy
-          cp -r /tmp/netsy/docs content/docs
+          cp -r netsy/docs content/docs
           # Remove the external mount since docs are now copied locally
           sed -i '/source: \.\.\/netsy\/docs/,+1d' hugo.yaml
       - name: Setup Pages
